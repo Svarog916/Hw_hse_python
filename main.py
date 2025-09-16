@@ -1,11 +1,4 @@
-year = 2024
-
-if year % 4 == 0:
-    print("Високосный год")
-else:
-    print("Обычный год")
-
-year = 2023
+year = int(input())
 
 if year % 4 == 0:
     print("Високосный год")
