@@ -9,16 +9,18 @@ directories = {
  '3': []
 }
 
-
 def p():
     print('Введите номер документа:')
     n = input()
-    owner = documents[[x.get('number') for x in documents].index(n)]['name']
+    owner = documents[[x.get('number') for x in documents].index(str(n))]['name']
     print('Владелец документа:', owner)
 
 
 def s():
-    return 0
+    print('Введите номер документа:')
+    n = input()
+    shelf = max(set(i if str(n) in doc else '0' for i, doc in directories.items()))
+    print(str('Документ хранится на полке: ' + shelf) if shelf != '0' else 'Документ с данным номером не существует.')
 
 
 while True:
